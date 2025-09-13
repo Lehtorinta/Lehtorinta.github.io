@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lehtorinta Oy</title>
+<meta name="description" content="Lehtorinta Oy tarjoaa ammattitaitoiset sähkötyöt, aurinkopaneeliasennukset, sähköautojen latausasemat ja urakointipalvelut. Luotettavaa sähköurakointia kotitalouksille ja yrityksille.">
+  
+<meta name="keywords" content="sähkötyöt Rääkkylä, sähköurakointi Rääkkylä, sähköurakointi, aurinkopaneelit, sähköauton latausasema, Avant urakointi, sähköasennukset, vianetsintä, kotitalouden sähkötyöt, yrityksen sähkötyöt, Lehtorinta Oy">
+<style>
+/* --------------------
+   Perustyylit
+-------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Header ja navigaatio */
+header {
+  width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+nav.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-sizing: border-box;
+}
+
+nav .logo img {
+  max-height: 60px;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+nav ul li a.contact-button {
+  background-color: #D42A28;
+  color: white;
+  border-radius: 10px;
+  padding: 8px 16px;
+}
+
+nav ul li a:hover {
+  background-color: #b72a1a;
+  color: white;
+}
+
+/* Hero-kuva */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background-image: url("a.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 55%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero-teksti */
+.hero-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  width: 80%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0 0 25px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  margin: 0 auto 40px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.hero-text a {
+  display: inline-block;
+  background-color: #D42A28;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-text a:hover {
+  background-color: #b72a1a;
+}
+
+/* Palvelut-kortit */
+.services {
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  flex: 0 0 550px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.service-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  color: #000000;
+  margin: 20px 0 15px 20px;
+}
+
+.service-card p {
+  padding: 0 20px;
+  margin-bottom: 0;
+  color: #444;
+  line-height: 1.6;
+}
+
+.service-list {
+  list-style-type: disc;
+  padding-left: 50px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Yhteystiedot ja lomake */
+.contact-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.contact-section h2 {
+  text-align: center;
+  color: #c62828;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Lomake keskelle */
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap; /* Allekkain pienemmillä ruuduilla */
+  padding: 0 20px; /* Estää ylittymisen reunoihin */
+  box-sizing: border-box;
+}
+
+/* Kortti */
+.contact-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  flex: 0 1 300px; /* joustava leveys: max 350px */
+  max-width: 350px;
+  min-width: 250px; /* Estää liian pienen leveyden */
+  align-self: flex-start;
+}
+
+/* Lomake */
+.contact-form {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  flex: 1 1 400px; /* joustava leveys */
+  min-width: 300px; 
+  max-width: 600px;
+  box-sizing: border-box;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+/* Mobiilissa allekkain */
+/* Pienemmät näytöt: yhteystiedot skaalautuu vasemmalta */
+@media(max-width:768px){
+  .container {
+    flex-direction: column;
+    align-items: flex-start; /* vasemmalle */
+    gap: 30px;
+  }
+  .contact-card {
+    width: 100%;       /* täyttää käytettävissä olevan tilan */
+    max-width: 350px;  /* ei ylitä tätä */
+    box-sizing: border-box; /* padding ei riko leveyttä */
+  }
+  .contact-form {
+    width: 100%;
+    max-width: 600px;  /* lomake saa olla leveämpi */
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+.contact-card h3 {
+  color: #D42A28;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  align-items: flex-start;
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
+.contact-row .label {
+  font-weight: 600;
+  color: #c62828;
+}
+
+.contact-row a, 
+.contact-row span {
+  color: #444;
+  text-decoration: none;
+  text-align: right;
+  word-break: break-word;
+}
+
+.contact-row a:hover {
+  color: #D42A28;
+}
+
+/* Lomake */
+
+
+.contact-form h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #222;
+}
+
+.contact-form p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.field {
+  flex: 1 1 200px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background: #fafafa;
+  transition: all 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: #c62828;
+  box-shadow: 0 0 0 3px rgba(198,40,40,0.12);
+  background: #fff;
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg,#c62828,#e53935);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+button:hover {
+  box-shadow: 0 6px 20px rgba(229,57,53,0.3);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Responsiivisuus */
+@media(max-width:900px){
+  .hero {height:300px;}
+  .hero-text h1{font-size:2.5rem;}
+  .hero-text {top: 20%;}
+  .hero-text p {font-size: 1rem; line-height: 1.4;}
+  nav ul{gap:20px;}
+}
+
+@media(max-width:768px){
+  nav.navbar{padding:15px 20px;flex-direction:column;gap:15px;}
+  nav ul{gap:15px;flex-wrap:wrap;justify-content:center;}
+  .hero {height:250px;}
+  .hero-text h1{font-size:2rem;}
+  .hero-text p{font-size:1.1rem;}
+  .contact-side, .contact-form{width:100%;flex:unset;}
+  .services{flex-direction:column;align-items:center;}
+  .container {flex-direction: column; gap: 30px;}
+  .contact-card {width: 100%; max-width: unset;}
+}
+
+@media(max-width:900px){
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .service-card {
+    flex: 0 0 90%;
+    margin-bottom: 30px;
+  }
+}
+.contact-row .address {
+  font-size: 1em; /* vähän pienempi */
+
+}
+
+.services-title { text-align: center; font-size: 2rem; color: #D42A28; margin: 40px 0 30px 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar"></nav>
+</header>
+
+<main>
+  
+<!-- Hero -->
+<section class="hero" aria-label="Aurinkopaneeli Rääkkylässä">
+  <div class="hero-text">
+    <h1>Ammattitaitoista sähköurakointia</h1>
+    <p>Kotitaloudet ja yritykset hoidamme kaikki sähkötyöt nopeasti, luotettavasti ja ammattitaidolla</p>
+    <a href="#otayhteytta" class="contact-button">Ota yhteyttä</a>
+  </div>
+</section>
+
+<!-- Palvelut -->
+<section id="palvelut" class="services-section">
+  <h2 class="services-title">Palvelumme</h2>
+  <div class="services">
+    
+    <div class="service-card">
+      <img src="sahko.jpg" alt="Sähkötyöt">
+      <h3>Sähkötyöt</h3>
+      <p>Teemme kaikenlaisia sähkötöitä yrityksille ja yksityishenkilöille.</p>
+      <ul class="service-list">
+        <li>Aurinkopaneelit</li>
+        <li>Sähköautojen latausasemat</li>
+        <li>Vianetsintä</li>
+        <li>jne</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <img src="avant.png" alt="Avant urakointi">
+      <h3>Avant urakointi</h3>
+      <p>Teemme myös urakointia Avant 530 pienkuormaajalla. Varusteina kauha, trukkipihdit ja kahmari.</p>
+      <ul class="service-list">
+        <li>Rakennustyömaat</li>
+        <li>Pihatyöt</li>
+        <li>jne</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Yhteystiedot -->
+<section id="otayhteytta" class="contact-section">
+  <h2>Ota yhteyttä</h2>
+  <div class="container">
+    <!-- Yhteystiedot kortti -->
+    <div class="contact-card">
+      <h3>Yhteystiedot</h3>
+      <div class="contact-row">
+        <span class="label">Sähköposti:</span>
+        <a href="mailto:teppo.toivanen@meili.fi">teppo.toivanen@meili.fi</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Puhelin:</span>
+        <a href="tel:+358401234567">050 322 1100</a>
+      </div>
+      <div class="contact-row">
+  <span class="label">Osoite:&nbsp;</span>
+  <span class="address">Piimälahdentie 610, 82335 Rasivaara</span>
+</div>
+
+      <div class="contact-row">
+        <span class="label">Y-tunnus:</span>
+        <span>2860271-6</span>
+      </div>
+    </div>
+
+    <!-- Lomake -->
+    <form class="contact-form" action="https://formspree.io/f/xandkyer" method="POST">
+      <h1>Ota yhteyttä</h1>
+      <p>Täytä tiedot alle ja palaamme asiaan mahdollisimman pian.</p>
+      <div class="row">
+        <div class="field">
+          <label for="firstname">Etunimi</label>
+          <input type="text" id="firstname" name="firstname" required>
+        </div>
+        <div class="field">
+          <label for="lastname">Sukunimi</label>
+          <input type="text" id="lastname" name="lastname" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Sähköposti</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+  <label for="phone">Puhelinnumero</label>
+  <input type="tel" id="phone" name="phone" required>
+</div>
+      <div class="field">
+        <label for="message">Viesti</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <!-- Formspree lisäasetukset -->
+      <input type="hidden" name="_subject" value="Uusi viesti verkkosivulta">
+      <input type="hidden" name="_replyto" value="teppo.toivanen@meili.fi">
+      <input type="hidden" name="_captcha" value="false">
+
+      <button type="submit">Lähetä viesti</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background:#f5f5f5; padding:20px; text-align:center; margin-top:60px;">
+  <p style="font-size:14px; color:#555;">
+    &copy; 2025 Lehtorinta Oy | 
+    <a href="#" id="privacy-link" style="color:#D42A28; text-decoration:none;">Tietosuojaseloste</a>
+  </p>
+  <p style="font-size:12px; color:#888; margin-top:5px;">
+  Created by Joona Toivanen
+</p>
+
+</footer>
+
+<!-- Popup -->
+<!-- Popup -->
+<div id="privacy-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; justify-content:center; align-items:center; background:rgba(0,0,0,0.6); z-index:1000;">
+  <div style="background:white; padding:30px 40px; border-radius:20px; max-width:500px; width:90%; text-align:left; box-shadow:0 8px 25px rgba(0,0,0,0.3); font-family:Arial, sans-serif; color:#333; line-height:1.6; position:relative;">
+    <h3 style="text-align:center; color:#D42A28; margin-top:0;">Tietosuoja</h3>
+    <p>
+      Täyttämällä lomakkeemme annat meille seuraavat tiedot: etunimi, sukunimi, sähköpostiosoite, puhelinnumero ja viesti.
+    </p>
+    <p>
+      Näitä tietoja käytetään ainoastaan vastaamiseen yhteydenottoosi. Lomakkeen tiedot välitetään turvallisesti Formspreen kautta, joka käsittelee viestit vain välittämistä varten.
+    </p>
+    <p>
+      Sinulla on oikeus pyytää tietojesi poistamista ja nähdä, mitä tietoja meillä on sinusta. Ota yhteyttä sähköpostitse: <a href="mailto:teppo.toivanen@meili.fi" style="color:#D42A28;">teppo.toivanen@meili.fi</a>.
+    </p>
+    <button id="close-popup" style="display:block; margin:20px auto 0; padding:12px 25px; border:none; background:#D42A28; color:white; border-radius:12px; cursor:pointer; font-weight:600;">Sulje</button>
+  </div>
+</div>
+
+
+<script>
+  // Avaa popup, kun footer-linkkiä klikataan
+  document.getElementById("privacy-link").onclick = function(e) {
+    e.preventDefault();
+    document.getElementById("privacy-popup").style.display = "flex";
+  }
+
+  // Sulje popup
+  document.getElementById("close-popup").onclick = function() {
+    document.getElementById("privacy-popup").style.display = "none";
+  }
+</script>
+
+</main>
+</body>
+</html>
