@@ -83,11 +83,15 @@ nav ul li a:hover {
   width: 100%;
   height: 400px;
   overflow: hidden;
-  background-image: url("a.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center 55%;
 }
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* säilyttää kuvan kuvasuhteen, leikkaa ylimääräiset reunat */
+  object-position: center 55%;  /* pystysuunta: 55% näkyy ylhäältä, kuten aiemmin */
+}
+
 
 .hero::after {
   content: "";
@@ -96,13 +100,6 @@ nav ul li a:hover {
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.3);
   z-index: 1;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /* Hero-teksti */
@@ -144,6 +141,7 @@ nav ul li a:hover {
 .hero-text a:hover {
   background-color: #b72a1a;
 }
+
 
 /* Palvelut-kortit */
 .services {
@@ -453,13 +451,15 @@ button:active {
 <main>
   
 <!-- Hero -->
-<section class="hero" aria-label="Aurinkopaneeli Rääkkylässä">
+<section class="hero" aria-label="Aurinkopaneelit Rääkkylässä">
+  <img src="a.jpg" alt="Aurinkopaneelien asennus Rääkkylässä">
   <div class="hero-text">
     <h1>Ammattitaitoista sähköurakointia</h1>
     <p>Kotitaloudet ja yritykset hoidamme kaikki sähkötyöt nopeasti, luotettavasti ja ammattitaidolla</p>
     <a href="#otayhteytta" class="contact-button">Ota yhteyttä</a>
   </div>
 </section>
+
 
 <!-- Palvelut -->
 <section id="palvelut" class="services-section">
