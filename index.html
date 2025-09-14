@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lehtorinta Oy</title>
+<title>Lehtorinta Oy - Ammattitaitoiset sähkötyöt</title>
+<link rel="canonical" href="https://lehtorinta.fi/">
+<meta name="robots" content="index, follow">
+
 <meta name="description" content="Lehtorinta Oy tarjoaa ammattitaitoiset sähkötyöt, aurinkopaneeliasennukset, sähköautojen latausasemat ja urakointipalvelut. Luotettavaa sähköurakointia kotitalouksille ja yrityksille.">
   
 <meta name="keywords" content="sähkötyöt Rääkkylä, sähköurakointi Rääkkylä, sähköurakointi, aurinkopaneelit, sähköauton latausasema, Avant urakointi, sähköasennukset, vianetsintä, kotitalouden sähkötyöt, yrityksen sähkötyöt, Lehtorinta Oy">
@@ -271,11 +274,29 @@ nav ul li a:hover {
 
 .contact-row {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  align-items: flex-start;
+  justify-content: space-between; /* Tekee sen että tieto menee oikealle */
+  margin-bottom: 8px;
 }
+
+.contact-row .label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Mobiilinäkymä */
+@media (max-width: 600px) {
+  .contact-row {
+    flex-direction: column;   /* allekkain pienellä ruudulla */
+    align-items: flex-start;
+  }
+
+  .contact-row .label {
+    margin-bottom: 3px;
+  }
+}
+
+
+
 
 .contact-row:last-child {
   border-bottom: none;
