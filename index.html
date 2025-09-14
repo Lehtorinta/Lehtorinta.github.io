@@ -290,25 +290,25 @@ nav ul li a:hover {
 }
 
 /* Mobiilinäkymä: kaikki allekkain vasemmalle */
-/* Mobiilinäkymä: kaikki allekkain vasemmalle */
 @media (max-width: 600px) {
   .contact-row {
-    flex-direction: column;    /* allekkain */
-    align-items: flex-start;   /* vasemmalle */
+    flex-direction: column;   /* allekkain */
+    align-items: flex-start;  /* vasemmalle */
+    justify-content: flex-start; /* poistaa oikealle tasauksen */
   }
 
   .contact-row .label {
     margin-bottom: 3px;
   }
 
-  /* Tämä varmistaa, että myös span ja a vie koko rivin ja teksti vasemmalle */
   .contact-row a,
   .contact-row span {
-    display: block;            /* block, niin text-align toimii oikein */
-    text-align: left;          /* vasen tasaus */
-    width: 100%;               /* vie koko rivin */
+    display: block;           /* block niin vie koko rivin */
+    width: 100%;
+    text-align: left;         /* vasen tasaus */
   }
 }
+
 
 
 
