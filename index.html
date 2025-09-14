@@ -274,29 +274,10 @@ nav ul li a:hover {
 
 .contact-row {
   display: flex;
-  justify-content: space-between; /* Tekee sen että tieto menee oikealle */
+  justify-content: space-between; /* Desktop: otsikko vasemmalla, arvo oikealla */
   margin-bottom: 8px;
+  align-items: flex-start;
 }
-
-.contact-row .label {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-/* Mobiilinäkymä */
-@media (max-width: 600px) {
-  .contact-row {
-    flex-direction: column;   /* allekkain pienellä ruudulla */
-    align-items: flex-start;
-  }
-
-  .contact-row .label {
-    margin-bottom: 3px;
-  }
-}
-
-
-
 
 .contact-row:last-child {
   border-bottom: none;
@@ -305,7 +286,27 @@ nav ul li a:hover {
 .contact-row .label {
   font-weight: 600;
   color: #c62828;
+  margin-right: 10px;
 }
+
+/* Mobiilinäkymä: kaikki allekkain vasemmalle */
+@media (max-width: 600px) {
+  .contact-row {
+    flex-direction: column;    /* allekkain */
+    align-items: flex-start;   /* vasemmalle */
+  }
+
+  .contact-row .label {
+    margin-bottom: 3px;        /* väli labelin ja arvon välillä */
+  }
+
+  .contact-row a,
+  .contact-row span {
+    text-align: left;          /* varmista vasen tasaus */
+  }
+}
+
+
 
 .contact-row a, 
 .contact-row span {
@@ -505,7 +506,7 @@ button:active {
         <a href="tel:+358401234567">050 322 1100</a>
       </div>
       <div class="contact-row">
-  <span class="label">Osoite:</span>
+  <span class="label">Osoite:&nbsp;</span>
   <span class="address">Piimälahdentie 610, 82335 Rasivaara</span>
 </div>
 
