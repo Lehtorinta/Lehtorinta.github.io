@@ -275,8 +275,8 @@ nav ul li a:hover {
 .contact-row {
   display: flex;
   justify-content: space-between; /* Desktop: otsikko vasemmalla, arvo oikealla */
-  margin-bottom: 8px;
   align-items: flex-start;
+  margin-bottom: 8px;
 }
 
 .contact-row:last-child {
@@ -289,37 +289,35 @@ nav ul li a:hover {
   margin-right: 10px;
 }
 
+.contact-row a, 
+.contact-row span {
+  color: #444;
+  text-decoration: none;
+  text-align: right; /* Desktop: oikea taso */
+  word-break: break-word;
+}
+
 /* Mobiilinäkymä: kaikki allekkain vasemmalle */
 @media (max-width: 600px) {
   .contact-row {
-    flex-direction: column;   /* allekkain */
-    align-items: flex-start;  /* vasemmalle */
+    flex-direction: column;    /* allekkain */
+    align-items: flex-start;   /* vasemmalle */
     justify-content: flex-start; /* poistaa oikealle tasauksen */
   }
 
   .contact-row .label {
     margin-bottom: 3px;
+    text-align: left;
   }
 
   .contact-row a,
   .contact-row span {
-    display: block;           /* block niin vie koko rivin */
+    display: block;
     width: 100%;
-    text-align: left;         /* vasen tasaus */
+    text-align: left;  /* Vasen taso mobiilissa */
   }
 }
 
-
-
-
-
-.contact-row a, 
-.contact-row span {
-  color: #444;
-  text-decoration: none;
-  text-align: right;
-  word-break: break-word;
-}
 
 .contact-row a:hover {
   color: #D42A28;
