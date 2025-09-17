@@ -591,16 +591,34 @@ button:active {
 <script>
   const form = document.getElementById('contactForm');
   const statusDiv = document.getElementById('formStatus');
-  const closeBtn = document.getElementById('closeStatus');
 
-  closeBtn.addEventListener('click', () => {
-    statusDiv.style.display = 'none';
-  });
+  // Funktio viestin näyttämiseen
+  function showStatusMessage(message, isSuccess) {
+    statusDiv.innerHTML = `
+      ${message}
+      <span id="closeStatus" style="
+        margin-left: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 1;
+      ">&times;</span>
+    `;
+
+    statusDiv.style.backgroundColor = isSuccess ? '#4CAF50' : '#f44336';
+    statusDiv.style.color = 'white';
+    statusDiv.style.display = 'block';
+
+    // Raksin toiminto
+    document.getElementById('closeStatus').addEventListener('click', () => {
+      statusDiv.style.display = 'none';
+    });
+  }
 
   form.addEventListener('submit', function(e) {
-    if (!window.fetch) return; // Jos JS ei tue fetch, lomake lähettää HTML-actionin kautta
+    if (!window.fetch) return;
 
-    e.preventDefault(); // Estetään oletuslähetys (sivun uudelleenlataus)
+    e.preventDefault();
 
     const formData = new FormData(form);
 
@@ -613,27 +631,18 @@ button:active {
     })
     .then(response => {
       if (response.ok) {
-        form.reset(); // Tyhjennetään lomake
-        statusDiv.textContent = 'Lomake lähetetty onnistuneesti';
-        statusDiv.style.backgroundColor = '#4CAF50'; // vihreä
-        statusDiv.style.color = 'white';
-        statusDiv.style.display = 'block';
+        form.reset();
+        showStatusMessage('Lomake lähetetty onnistuneesti', true);
       } else {
-        // Virhetilanne
-        statusDiv.textContent = 'Lähetys epäonnistui, yritä uudelleen';
-        statusDiv.style.backgroundColor = '#f44336'; // punainen
-        statusDiv.style.color = 'white';
-        statusDiv.style.display = 'block';
+        showStatusMessage('Lähetys epäonnistui, yritä uudelleen', false);
       }
     })
     .catch(() => {
-      statusDiv.textContent = 'Lähetys epäonnistui, tarkista internet-yhteys';
-      statusDiv.style.backgroundColor = '#f44336'; // punainen
-      statusDiv.style.color = 'white';
-      statusDiv.style.display = 'block';
+      showStatusMessage('Lähetys epäonnistui, tarkista internet-yhteys', false);
     });
   });
 </script>
+
 
 
 
@@ -688,4 +697,5 @@ button:active {
 </main>
 </body>
 </html>
+
 
